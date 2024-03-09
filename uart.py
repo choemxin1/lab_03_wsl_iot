@@ -44,3 +44,4 @@ def readSerial(client):
 
 def writeData(data):
     ser.write(str(data).encode())
+    print("send  ",data)
