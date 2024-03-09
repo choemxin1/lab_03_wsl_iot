@@ -11,7 +11,8 @@ def getPort():
             splitPort = strPort.split(" ")
             commPort = (splitPort[0])
     #return commPort
-    return "COM3"
+    #return "COM3"
+    return "/dev/pts/9"
 
 if getPort()!= "None":
     ser = serial.Serial( port=getPort(), baudrate=115200)
