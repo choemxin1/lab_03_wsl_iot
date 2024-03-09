@@ -32,6 +32,7 @@ def readSerial(client):
     if (bytesToRead > 0):
         global mess
         mess = mess + ser.read(bytesToRead).decode("UTF-8")
+        print('cdcdsdd',mess)
         while ("#" in mess) and ("!" in mess):
             start = mess.find("!")
             end = mess.find("#")
@@ -40,3 +41,6 @@ def readSerial(client):
                 mess = ""
             else:
                 mess = mess[end+1:]
+
+def writeData(data):
+    ser.write(str(data).encode())
